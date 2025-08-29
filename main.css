@@ -1,0 +1,106 @@
+:root {
+    --pink: #e3b5cf;
+    --dark-pink: #562340;
+    --blue: #9ad9dc;
+    --dark-blue: #234C4E;
+    --large: 200px;
+    --small: 50px;
+    --animationTime: 9s;
+}
+@font-face {
+    font-family: "Franxurter Totally";
+    src: url("assets/FranxurterTotallyMedium-gxwjp.ttf");
+}
+@keyframes breath {
+    0% { width: var(--large); height: var(--large); background-color: var(--pink); }
+    25% { width: var(--small); height: var(--small); background-color: var(--blue); }
+    50% { width: var(--small); height: var(--small); background-color: var(--blue); }
+    75% { width: var(--large); height: var(--large); background-color: var(--pink); }
+    100% { width: var(--large); height: var(--large); background-color: var(--pink); }
+}
+@keyframes fade {
+    0% { opacity: 1; }
+    25% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+body {
+    background: white url(assets/background.jpg);
+    font-family: Arial, Helvetica, sans-serif;
+}
+#fadeIn {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: white;
+    opacity: 0;
+    z-index: 1000;
+    animation: fade 1.5s linear 0s 1;
+    pointer-events: none;
+}
+h1 {
+    font-family: "Franxurter Totally";
+    font-size: 3rem;
+    margin: 0;
+    color: var(--dark-pink)
+}
+nav {
+    background: var(--pink);
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.tabs div {
+    display: inline-block;
+    color:navy;
+}
+.tabs div:nth-child(even), a {
+    color: blue;
+}
+.tabs div:hover, a:hover {
+    color: red;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+p {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+.tablinks {
+    cursor: pointer;
+}
+.tabcontent {
+    text-align: center;
+}
+#boxAnimation {
+    background-color: var(--pink);
+    animation: breath var(--animationTime) ease-in-out infinite;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    /* width: var(--small);
+    height: var(--small); */
+}
+#stressed input {
+    width: 40px;
+}
+ol, ul {
+    list-style-position: inside;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.tabcontent ol {
+    margin: 0 auto;
+}
+.tabcontent ol li {
+    margin: 0 auto;
+    padding: 1px 0;
+}
+#fiftyActivitiesList {
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
